@@ -32,7 +32,7 @@
 - 🛡️ **Secure** - មានលក្ខណៈសម្រាប់សុវត្ថិភាព
 - 🚀 **High Performance** - រលឿននិងមានប្រសិទ្ធភាព
 
-### 🔗 របូបនៃលំហូរ
+###  របូបនៃលំហូរ
 
 ```
 ឯកសារ Java (.java)
@@ -48,9 +48,9 @@ Java Bytecode (.class)
 
 ---
 
-## 🛠️ បរិស្ថាននៃការងារ
+##  បរិស្ថាននៃការងារ
 
-### 📥 តម្រូវការ
+###  តម្រូវការ
 
 ```
 1. JDK (Java Development Kit) - ក្របីផ្នែក
@@ -67,7 +67,7 @@ Java Bytecode (.class)
 3. Command Line / Terminal
 ```
 
-### ✅ ឆ្លងកាត់ការដំឡើង
+###  ឆ្លងកាត់ការដំឡើង
 
 ```bash
 # ពិនិត្យលេខ Java
@@ -79,7 +79,7 @@ javac -version
 
 ---
 
-## 💻 ក្រូច្ចូលដង (Hello World)
+##  ក្រូច្ចូលដង (Hello World)
 
 ### ឧទាហរណ៍សម្រាប់ដំបូង
 
@@ -92,7 +92,7 @@ public class HelloWorld {
 }
 ```
 
-### 📝 ការពន្យល់លម្អិត
+###  ការពន្យល់លម្អិត
 
 | ផ្នែក | អត្ថន័យ |
 |------|---------|
@@ -103,7 +103,7 @@ public class HelloWorld {
 | `main(String[] args)` | ចូលក្នុងដែល |
 | `System.out.println()` | បោះពុម្ពលទ្ធផល |
 
-### ▶️ របូបរត់
+###  របូបរត់
 
 ```bash
 # Compile
@@ -118,9 +118,9 @@ java HelloWorld
 
 ---
 
-## 📊 ប្រភេទទិន្នន័យ
+##  ប្រភេទទិន្នន័យ
 
-### 1️⃣ Primitive Data Types
+### 1️ Primitive Data Types
 
 ប្រភេទទិន្នន័យដែលចាប់ផ្តើមតូចបំផុត៖
 
@@ -170,7 +170,7 @@ char special = '@';
 char initial = 'J';
 ```
 
-### 2️⃣ Reference Data Types
+### 2️ Reference Data Types
 
 ប្រភេទទិន្នន័យដែលលឹងឆ្ងាយ៖
 
@@ -201,7 +201,7 @@ System.out.println(numbers[0]); // 1
 System.out.println(fruits[1]); // ក្រូច
 ```
 
-### 📋 ឧទាហរណ៍ពង្រីក
+###  ឧទាហរណ៍ពង្រីក
 
 ```java
 public class DataTypesExample {
@@ -232,9 +232,9 @@ public class DataTypesExample {
 
 ---
 
-## 🔄 អនុគមន៍
+##  អនុគមន៍
 
-### 1️⃣ អនុគមន៍មូលដ្ឋាន
+### អនុគមន៍មូលដ្ឋាន
 
 ```java
 // ឧទាហរណ៍ 1: អនុគមន៍មិនផ្តល់តម្លៃ
@@ -253,7 +253,7 @@ public static void printInfo(String name, int age) {
 }
 ```
 
-### 2️⃣ ការហៅអនុគមន៍
+### ការហៅអនុគមន៍
 
 ```java
 public class FunctionExample {
@@ -281,7 +281,7 @@ public class FunctionExample {
 }
 ```
 
-### 3️⃣ Overloading
+###  Overloading
 
 ```java
 // អនុគមន៍ដដែលឈ្មោះ ប៉ុន្តែផ្សេងគ្នា parameter
@@ -305,7 +305,7 @@ System.out.println(add("សួស្តី", "លោក")); // សួស្ត�
 
 ---
 
-## 🎮 ទិន្នន័យលម្អិត
+##  ទិន្នន័យលម្អិត
 
 ### 1️⃣ ប្រកាសលក្ខខណ្ឌ (If-Else)
 
@@ -340,7 +340,7 @@ public class ConditionExample {
 }
 ```
 
-### 2️⃣ ចូលក្នុងប្រកាស (Switch)
+### ចូលក្នុងប្រកាស (Switch)
 
 ```java
 public class SwitchExample {
@@ -379,7 +379,7 @@ public class SwitchExample {
 }
 ```
 
-### 3️⃣ រង្វិលជុំ (Loops)
+### រង្វិលជុំ (Loops)
 
 #### FOR Loop
 
@@ -431,7 +431,7 @@ public class WhileLoopExample {
 }
 ```
 
-### 4️⃣ ប្រតិបត្តិកម្ម
+### ប្រតិបត្តិកម្ម
 
 ```java
 public class OperatorsExample {
@@ -463,11 +463,11 @@ public class OperatorsExample {
 
 ---
 
-## 🏗️ OOP Programming
+##  OOP Programming
 
 ការផ្តើមសិក្សា Object-Oriented Programming
 
-### 1️⃣ Class និង Object
+### 1️ Class និង Object
 
 ```java
 // កំណត់ក្រុង (Blueprint)
@@ -509,7 +509,7 @@ public class Main {
 }
 ```
 
-### 2️⃣ Encapsulation
+### 2️ Encapsulation
 
 ```java
 public class Student {
@@ -555,7 +555,7 @@ System.out.println("ឈ្មោះ: " + student.getName());
 System.out.println("ថ្នាក់: " + student.getGradeLevel()); // A
 ```
 
-### 3️⃣ Inheritance
+### 3️ Inheritance
 
 ```java
 // ក្រុងមា (Parent Class)
@@ -599,7 +599,7 @@ dog.sleep();  // បង់ក កំពុងដេក
 dog.bark();   // បង់ក ឪឡ ឪឡ!
 ```
 
-### 4️⃣ Polymorphism
+### 4️ Polymorphism
 
 ```java
 // Interface (ស្ថានីយកម្មលម្អិត)
@@ -643,9 +643,9 @@ dog.makeSound();  // ឆ្នូត ឆ្នូត!
 
 ---
 
-## ⚠️ Exception Handling
+##  Exception Handling
 
-### 1️⃣ Try-Catch
+### 1️ Try-Catch
 
 ```java
 public class ExceptionExample {
@@ -668,7 +668,7 @@ public class ExceptionExample {
 }
 ```
 
-### 2️⃣ Try-Catch-Finally
+### 2️ Try-Catch-Finally
 
 ```java
 public class FileHandlingExample {
@@ -688,7 +688,7 @@ public class FileHandlingExample {
 }
 ```
 
-### 3️⃣ Throws
+### 3️ Throws
 
 ```java
 public class ThrowsExample {
@@ -712,9 +712,9 @@ public class ThrowsExample {
 
 ---
 
-## 📦 Collections
+##  Collections
 
-### 1️⃣ ArrayList
+### 1️ ArrayList
 
 ```java
 import java.util.ArrayList;
@@ -747,7 +747,7 @@ public class ArrayListExample {
 }
 ```
 
-### 2️⃣ HashMap
+### 2️ HashMap
 
 ```java
 import java.util.HashMap;
@@ -778,7 +778,7 @@ public class HashMapExample {
 }
 ```
 
-### 3️⃣ HashSet
+### 3️ HashSet
 
 ```java
 import java.util.HashSet;
@@ -806,9 +806,9 @@ public class HashSetExample {
 
 ---
 
-## 📁 File I/O
+##  File I/O
 
-### 1️⃣ អាន​ឯកសារ
+### អាន​ឯកសារ
 
 ```java
 import java.io.File;
@@ -837,7 +837,7 @@ public class FileReadExample {
 }
 ```
 
-### 2️⃣ សរសេរឯកសារ
+### សរសេរឯកសារ
 
 ```java
 import java.io.FileWriter;
@@ -863,7 +863,7 @@ public class FileWriteExample {
 
 ---
 
-## 🚀 ឧទាហរណ៍ប្រឹក្សាមួយ
+##  ឧទាហរណ៍ប្រឹក្សាមួយ
 
 ```java
 import java.util.ArrayList;
@@ -979,9 +979,9 @@ class Student {
 
 ---
 
-## 📚 ល្បច និងដំណាក់កាល
+##  ល្បច និងដំណាក់កាល
 
-### ✅ ល្បច
+###  ល្បច
 
 ```java
 // 1. ប្រើ final សម្រាប់ constants
@@ -1007,7 +1007,7 @@ sb.append("លោក");
 String result = sb.toString();
 ```
 
-### ❌ ដែលមិនគួរ
+###  ដែលមិនគួរ
 
 ```java
 // ១. មិនប្រើ raw types
