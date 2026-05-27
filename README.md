@@ -1,6 +1,5 @@
 # ☕ ការផ្តើមសិក្សា Java - ពីប្រឹក្សាដល់ឈានល្ងាច
 
-![Java](https://img.shields.io/badge/Java-17+-red?style=flat-square&logo=java)
 ![Difficulty](https://img.shields.io/badge/Level-Beginner%20to%20Advanced-blue?style=flat-square)
 
 
@@ -1103,7 +1102,5 @@ String result = sb.toString();
 > ការអនុវត្តការសរសេរកូដជារៀងរាល់ថ្ងៃ! ព្យាយាមបង្កើតគម្រោងតូចដើម្បីក្សាន់ការយល់ដឹងរបស់អ្នក។
 
 ---
-
-**ឯកសារលម្អិត:** 2024 | **Status:** 🟢 Active | **Language:** Khmer ខ្មែរ
 
 ឡើងលើក្នុងលម្អិត ហើយរីករាយក្នុងការសរសេរកម្មវិធី! ☕💻
