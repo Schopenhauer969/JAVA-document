@@ -2,13 +2,13 @@
 
 ![Java](https://img.shields.io/badge/Java-17+-red?style=flat-square&logo=java)
 ![Difficulty](https://img.shields.io/badge/Level-Beginner%20to%20Advanced-blue?style=flat-square)
-![Language](https://img.shields.io/badge/Language-Khmer%20ខ្មែរ-green?style=flat-square)
+
 
 ---
 
 ## 📋 តារាងមាតិកា
 
-1. [ឈានល្ងាច Java](#ឈានល្ងាច-java)
+1. [Java](#java)
 2. [បរិស្ថាននៃការងារ](#បរិស្ថាននៃការងារ)
 3. [Hello World](#hello-world)
 4. [ប្រភេទទិន្នន័យ](#ប្រភេទទិន្នន័យ)
@@ -21,9 +21,9 @@
 
 ---
 
-## 🎯 ឈានល្ងាច Java
+##  Java
 
-### ❓ Java ជាអ្វី?
+###  Java ជាអ្វី?
 
 **Java** គឺជាភាសាសរសេរកម្មវិធីដែលមានលក្ខណៈពិសេស៖
 
@@ -33,7 +33,7 @@
 - 🛡️ **Secure** - មានលក្ខណៈសម្រាប់សុវត្ថិភាព
 - 🚀 **High Performance** - រលឿននិងមានប្រសិទ្ធភាព
 
-### 🔗 របូបនៃលំហូរ
+###  របូបនៃលំហូរ
 
 ```
 Java Source File (.java)
@@ -49,9 +49,9 @@ Java Bytecode (.class)
 
 ---
 
-## 🛠️ បរិស្ថាននៃការងារ
+##  បរិស្ថាននៃការងារ
 
-### 📥 តម្រូវការ
+###  តម្រូវការ
 
 ```
 1. JDK (Java Development Kit)
@@ -68,7 +68,7 @@ Java Bytecode (.class)
 3. Command Line / Terminal
 ```
 
-### ✅ ឆ្លងកាត់ការដំឡើង
+###  ឆ្លងកាត់ការដំឡើង
 
 ```bash
 # ពិនិត្យ Java version
@@ -80,7 +80,7 @@ javac -version
 
 ---
 
-## 💻 Hello World
+##  Hello World
 
 ### ឧទាហរណ៍សម្រាប់ដំបូង
 
@@ -93,7 +93,7 @@ public class HelloWorld {
 }
 ```
 
-### 📝 ការពន្យល់លម្អិត
+###  ការពន្យល់លម្អិត
 
 | Keyword | អត្ថន័យ |
 |---------|---------|
@@ -104,7 +104,7 @@ public class HelloWorld {
 | `main(String[] args)` | ចូលក្នុងដែលដែលកម្មវិធីចាប់ផ្តើម |
 | `System.out.println()` | បោះពុម្ពលទ្ធផលដល់ console |
 
-### ▶️ របូបរត់
+###  របូបរត់
 
 ```bash
 # Step 1: Compile file
@@ -119,9 +119,9 @@ java HelloWorld
 
 ---
 
-## 📊 ប្រភេទទិន្នន័យ
+##  ប្រភេទទិន្នន័យ
 
-### 1️⃣ Primitive Data Types
+###  Primitive Data Types
 
 ប្រភេទទិន្នន័យមូលដ្ឋាននៅក្នុង Java
 
@@ -175,7 +175,7 @@ char initial = 'J';
 char symbol = '#';
 ```
 
-### 2️⃣ Reference Data Types
+###  Reference Data Types
 
 ប្រភេទទិន្នន័យខ្លាំង/ស្មុគស្មាញ
 
@@ -216,7 +216,7 @@ System.out.println(numbers.length); // 5
 numbers[0] = 10;
 ```
 
-### 📋 ឧទាហរណ៍ពង្រីក
+###  ឧទាហរណ៍ពង្រីក
 
 ```java
 public class DataTypesExample {
@@ -252,7 +252,7 @@ public class DataTypesExample {
 
 ---
 
-## 🔄 អនុគមន៍ (Methods/Functions)
+##  អនុគមន៍ (Methods/Functions)
 
 ### 1️⃣ អនុគមន៍មូលដ្ឋាន
 
@@ -274,7 +274,7 @@ public static void printInfo(String name, int age) {
 }
 ```
 
-### 2️⃣ ការហៅ methods
+### ការហៅ methods
 
 ```java
 public class MethodExample {
@@ -310,7 +310,7 @@ public class MethodExample {
 }
 ```
 
-### 3️⃣ Method Overloading
+###  Method Overloading
 
 ```java
 // method ដែលមាន overloading (ឈ្មោះដូច ប៉ុន្តែ parameters ខុស)
@@ -334,9 +334,9 @@ System.out.println(add("សួស្តី", " លោក")); // សួស្ត�
 
 ---
 
-## 🎮 ទិន្នន័យលម្អិត (Control Flow)
+##  ទិន្នន័យលម្អិត (Control Flow)
 
-### 1️⃣ ប្របាស់ប្រកាស (If-Else)
+### ប្របាស់ប្រកាស (If-Else)
 
 ```java
 public class IfElseExample {
@@ -369,7 +369,7 @@ public class IfElseExample {
 }
 ```
 
-### 2️⃣ ប្របាស់ Switch (ផ្លូវច្រើន)
+### ប្របាស់ Switch (ផ្លូវច្រើន)
 
 ```java
 public class SwitchExample {
@@ -408,7 +408,7 @@ public class SwitchExample {
 }
 ```
 
-### 3️⃣ រង្វិលជុំ (Loops)
+### រង្វិលជុំ (Loops)
 
 #### for Loop
 
@@ -461,7 +461,7 @@ public class WhileLoopExample {
 }
 ```
 
-### 4️⃣ Operators (ប្រតិបត្តិកម្ម)
+###  Operators (ប្រតិបត្តិកម្ម)
 
 ```java
 public class OperatorsExample {
@@ -500,11 +500,11 @@ public class OperatorsExample {
 
 ---
 
-## 🏗️ OOP Concepts
+##  OOP Concepts
 
 Object-Oriented Programming គឺជាគោលគំនិតដ៏សំខាន់នៃ Java
 
-### 1️⃣ Class និង Object
+###  Class និង Object
 
 ```java
 // ស្ថាបនា class (blueprint)
@@ -551,7 +551,7 @@ public class Main {
 }
 ```
 
-### 2️⃣ Encapsulation (ការលាក់ទុក)
+###  Encapsulation (ការលាក់ទុក)
 
 ```java
 public class Student {
@@ -599,7 +599,7 @@ System.out.println("ឈ្មោះ: " + student.getName());
 System.out.println("ថ្នាក់: " + student.getGradeLevel()); // A
 ```
 
-### 3️⃣ Inheritance (ការបន្ត/មរតក)
+###  Inheritance (ការបន្ត/មរតក)
 
 ```java
 // Parent class (ក្រុងមា)
@@ -644,7 +644,7 @@ myDog.sleep();  // បង់ក កំពុងដេក
 myDog.bark();   // បង់ក ឪឡ ឪឡ!
 ```
 
-### 4️⃣ Polymorphism (ច្រើនម៉ាត)
+###  Polymorphism (ច្រើនម៉ាត)
 
 ```java
 // Interface (កម្មវិធីលម្អិត)
@@ -689,11 +689,11 @@ dog.makeSound();  // ឆ្នូត ឆ្នូត!
 
 ---
 
-## ⚠️ Exception Handling
+##  Exception Handling
 
 ការគ្រប់គ្រងកំហុស
 
-### 1️⃣ Try-Catch
+###  Try-Catch
 
 ```java
 public class ExceptionExample {
@@ -716,7 +716,7 @@ public class ExceptionExample {
 }
 ```
 
-### 2️⃣ Try-Catch-Finally
+###  Try-Catch-Finally
 
 ```java
 public class TryCatchFinallyExample {
@@ -735,7 +735,7 @@ public class TryCatchFinallyExample {
 }
 ```
 
-### 3️⃣ Throws Keyword
+###  Throws Keyword
 
 ```java
 public class ThrowsExample {
@@ -759,9 +759,9 @@ public class ThrowsExample {
 
 ---
 
-## 📦 Collections
+##  Collections
 
-### 1️⃣ ArrayList (អរេ Dynamics)
+###  ArrayList (អរេ Dynamics)
 
 ```java
 import java.util.ArrayList;
@@ -794,7 +794,7 @@ public class ArrayListExample {
 }
 ```
 
-### 2️⃣ HashMap (ផែនទីលេខ)
+###  HashMap (ផែនទីលេខ)
 
 ```java
 import java.util.HashMap;
@@ -825,7 +825,7 @@ public class HashMapExample {
 }
 ```
 
-### 3️⃣ HashSet (សំណុំលេខ)
+###  HashSet (សំណុំលេខ)
 
 ```java
 import java.util.HashSet;
@@ -853,9 +853,9 @@ public class HashSetExample {
 
 ---
 
-## 📁 File I/O (អាន-សរសេរឯកសារ)
+##  File I/O (អាន-សរសេរឯកសារ)
 
-### 1️⃣ អានឯកសារ
+### អានឯកសារ
 
 ```java
 import java.io.BufferedReader;
@@ -883,7 +883,7 @@ public class FileReadExample {
 }
 ```
 
-### 2️⃣ សរសេរឯកសារ
+### សរសេរឯកសារ
 
 ```java
 import java.io.FileWriter;
@@ -909,7 +909,7 @@ public class FileWriteExample {
 
 ---
 
-## 🚀 ឧទាហរណ៍ប្រឹក្សាពេញលេញ
+##  ឧទាហរណ៍ប្រឹក្សាពេញលេញ
 
 ```java
 import java.util.ArrayList;
@@ -1025,9 +1025,9 @@ class Student {
 
 ---
 
-## 📚 Best Practices & Tips
+##  Best Practices & Tips
 
-### ✅ ល្បច (Do's)
+###  ល្បច (Do's)
 
 ```java
 // 1. Use final សម្រាប់ constants
@@ -1054,7 +1054,7 @@ sb.append("World");
 String result = sb.toString();
 ```
 
-### ❌ មិនគួរ (Don'ts)
+###  មិនគួរ (Don'ts)
 
 ```java
 // 1. មិនប្រើ raw types
@@ -1072,7 +1072,7 @@ String result = sb.toString();
 
 ---
 
-## 🎓 សង្ខេប Concepts
+##  សង្ខេប Concepts
 
 | Concept | អត្ថន័យ |
 |---------|---------|
