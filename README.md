@@ -252,9 +252,9 @@ public class DataTypesExample {
 
 ---
 
-##  អនុគមន៍ (Methods/Functions)
+##  អនុគមន៍
 
-### 1️⃣ អនុគមន៍មូលដ្ឋាន
+### អនុគមន៍មូលដ្ឋាន
 
 ```java
 // ឧទាហរណ៍ 1: void method (មិនផ្តល់តម្លៃ)
@@ -334,7 +334,7 @@ System.out.println(add("សួស្តី", " លោក")); // សួស្ត�
 
 ---
 
-##  ទិន្នន័យលម្អិត (Control Flow)
+##  ទិន្នន័យលម្អិត
 
 ### ប្របាស់ប្រកាស (If-Else)
 
@@ -853,7 +853,7 @@ public class HashSetExample {
 
 ---
 
-##  File I/O (អាន-សរសេរឯកសារ)
+##  File I/O 
 
 ### អានឯកសារ
 
