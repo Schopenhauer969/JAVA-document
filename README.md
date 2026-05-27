@@ -2,7 +2,6 @@
 
 ![Java](https://img.shields.io/badge/Java-17+-red?style=flat-square&logo=java)
 ![Difficulty](https://img.shields.io/badge/Level-Beginner%20to%20Advanced-blue?style=flat-square)
-![Language](https://img.shields.io/badge/Language-Khmer%20ខ្មែរ-green?style=flat-square)
 
 ---
 
@@ -21,9 +20,9 @@
 
 ---
 
-## 🎯 Java
+##  Java
 
-### ❓ Java ជាអ្វី?
+###  Java ជាអ្វី?
 
 **Java** គឺជាភាសាសរសេរកម្មវិធីដែលមានលក្ខណៈពិសេស៖
 
