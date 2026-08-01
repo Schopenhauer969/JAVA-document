@@ -1,1106 +1,1075 @@
-# ☕ ការផ្តើមសិក្សា Java - ពីប្រឹក្សាដល់ឈានល្ងាច
+# ☕ Java — Complete Guide (Beginner to Advanced)
 
-![Difficulty](https://img.shields.io/badge/Level-Beginner%20to%20Advanced-blue?style=flat-square)
-
-
----
-
-## 📋 តារាងមាតិកា
-
-1. [Java](#java)
-2. [បរិស្ថាននៃការងារ](#បរិស្ថាននៃការងារ)
-3. [Hello World](#hello-world)
-4. [ប្រភេទទិន្នន័យ](#ប្រភេទទិន្នន័យ)
-5. [អនុគមន៍](#អនុគមន៍)
-6. [ទិន្នន័យលម្អិត](#ទិន្នន័យលម្អិត)
-7. [OOP Concepts](#oop-concepts)
-8. [Exception Handling](#exception-handling)
-9. [Collections](#collections)
-10. [File I/O](#file-io)
+> A complete, hands-on guide to Java — from your first program to OOP, collections, generics, streams, and multithreading used in real production code.
 
 ---
 
-##  Java
+## 📚 Table of Contents
 
-###  Java ជាអ្វី?
-
-**Java** គឺជាភាសាសរសេរកម្មវិធីដែលមានលក្ខណៈពិសេស៖
-
-- 🔄 **Object-Oriented** - ផ្នែកខ្លួនឯងលើ objects និង classes
-- 🌍 **Platform Independent** - សរសេរម្តង រត់ everywhere (WORA)
-- 💪 **Strongly Typed** - ត្រូវកំណត់ data types ច្បាស់លាស់
-- 🛡️ **Secure** - មានលក្ខណៈសម្រាប់សុវត្ថិភាព
-- 🚀 **High Performance** - រលឿននិងមានប្រសិទ្ធភាព
-
-###  របូបនៃលំហូរ
-
-```
-Java Source File (.java)
-        ↓
-    Compiler (javac)
-        ↓
-Java Bytecode (.class)
-        ↓
-    JVM (Java Virtual Machine)
-        ↓
-    លទ្ធផល
-```
+1. [Introduction](#1-introduction)
+2. [Prerequisites & Setup](#2-prerequisites--setup)
+3. [Your First Program](#3-your-first-program)
+4. [Variables & Data Types](#4-variables--data-types)
+5. [Operators](#5-operators)
+6. [Control Flow](#6-control-flow)
+7. [Arrays](#7-arrays)
+8. [Methods](#8-methods)
+9. [OOP: Classes & Objects](#9-oop-classes--objects)
+10. [Inheritance & Polymorphism](#10-inheritance--polymorphism)
+11. [Interfaces & Abstract Classes](#11-interfaces--abstract-classes)
+12. [Exception Handling](#12-exception-handling)
+13. [Collections Framework](#13-collections-framework)
+14. [Generics](#14-generics)
+15. [Streams & Lambda Expressions](#15-streams--lambda-expressions)
+16. [File I/O](#16-file-io)
+17. [Multithreading Basics](#17-multithreading-basics)
+18. [Best Practices](#18-best-practices)
+19. [Full Example Project](#19-full-example-project)
+20. [Resources](#20-resources)
 
 ---
 
-##  បរិស្ថាននៃការងារ
+## 1. Introduction
 
-###  តម្រូវការ
+Java is a class-based, object-oriented, statically-typed programming language designed to run anywhere via the **JVM (Java Virtual Machine)** — "write once, run anywhere."
 
-```
-1. JDK (Java Development Kit)
-   - JRE (Java Runtime Environment)
-   - javac Compiler
-   - ឧបករណ៍មូលដ្ឋាន
+**Key facts:**
+- Compiled to bytecode, then run by the JVM (platform-independent)
+- Statically typed — variable types are checked at compile time
+- Strong OOP foundations: classes, inheritance, interfaces, polymorphism
+- Powers Android apps, enterprise backends, big data systems (Hadoop, Spark), and more
 
-2. IDE (Integrated Development Environment)
-   - IntelliJ IDEA (ល្អបំផុត)
-   - Eclipse
-   - Visual Studio Code
-   - NetBeans
+---
 
-3. Command Line / Terminal
-```
+## 2. Prerequisites & Setup
 
-###  ឆ្លងកាត់ការដំឡើង
+- No prior coding experience required
+- **JDK (Java Development Kit)** 17 or later installed
+- A code editor: **IntelliJ IDEA**, **VS Code**, or **Eclipse**
 
 ```bash
-# ពិនិត្យ Java version
-java -version
-
-# ពិនិត្យ Compiler version
-javac -version
+# Verify installation
+java --version
+javac --version
 ```
 
----
-
-##  Hello World
-
-### ឧទាហរណ៍សម្រាប់ដំបូង
-
-```java
-public class HelloWorld {
-    // main method - ចូលក្នុងដែលបឋមនៃផ្នែក
-    public static void main(String[] args) {
-        System.out.println("សួស្តីលោក ពិភពលោក!");
-    }
-}
+Expected output (example):
+```
+java 21.0.1 2023-10-17 LTS
+javac 21.0.1
 ```
 
-###  ការពន្យល់លម្អិត
-
-| Keyword | អត្ថន័យ |
-|---------|---------|
-| `public` | មើលឃើញច្រើនទាំងអស់ |
-| `class` | ក្រុង/template សម្រាប់ object |
-| `static` | ក្រុងមាឯង មិនត្រូវ instance |
-| `void` | method មិនបង្ហាញតម្លៃ |
-| `main(String[] args)` | ចូលក្នុងដែលដែលកម្មវិធីចាប់ផ្តើម |
-| `System.out.println()` | បោះពុម្ពលទ្ធផលដល់ console |
-
-###  របូបរត់
+**Compiling and running Java manually:**
 
 ```bash
-# Step 1: Compile file
+# Compile a .java file into bytecode (.class file)
 javac HelloWorld.java
 
-# Step 2: Run the program
+# Run the compiled program
 java HelloWorld
-
-# លទ្ធផល:
-សួស្តីលោក ពិភពលោក!
 ```
 
 ---
 
-##  ប្រភេទទិន្នន័យ
-
-###  Primitive Data Types
-
-ប្រភេទទិន្នន័យមូលដ្ឋាននៅក្នុង Java
-
-#### Integer Types (ចំនួនគត់)
+## 3. Your First Program
 
 ```java
-byte byteVar = 127;              // -128 ទៅ 127
-short shortVar = 32000;          // -32,768 ទៅ 32,767
-int intVar = 2147483647;         // ធម្មតាប្រើបំផុត
-long longVar = 9223372036854775807L; // ធំ (ដាក់ L នៅចុង)
-
-// ឧទាហរណ៍ការប្រើ
-int age = 25;
-int count = 100;
-long population = 8000000000L;
-```
-
-#### Floating Point Types (ចំនួនលេខទសភាគ)
-
-```java
-float floatVar = 3.14f;          // តូច (ដាក់ f នៅចុង)
-double doubleVar = 3.14159265;   // ធម្មតាប្រើបំផុត
-
-// ឧទាហរណ៍
-float price = 99.99f;
-double pi = 3.14159265359;
-double salary = 5000.50;
-```
-
-#### Boolean Type (ពិតឬមិនពិត)
-
-```java
-boolean isTrue = true;
-boolean isFalse = false;
-
-// ឧទាហរណ៍
-boolean isActive = true;
-boolean isEmpty = false;
-boolean isAdmin = true;
-```
-
-#### Character Type (អក្សរតែមួយ)
-
-```java
-char letter = 'A';
-char digit = '5';
-char special = '@';
-
-// ឧទាហរណ៍
-char initial = 'J';
-char symbol = '#';
-```
-
-###  Reference Data Types
-
-ប្រភេទទិន្នន័យខ្លាំង/ស្មុគស្មាញ
-
-#### String (ឃ្នាលេខលេខ)
-
-```java
-String name = "សូចា";
-String message = "សួស្តីលោក";
-String empty = "";
-
-// ប្រើប្រាស់ String
-String greeting = "សួស្តីលោក " + name;
-System.out.println(greeting);  // សួស្តីលោក សូចា
-
-// String methods
-int length = name.length();
-String upper = name.toUpperCase();
-boolean contains = greeting.contains("សូចា");
-```
-
-#### Array (ឈានល្ងាច)
-
-```java
-// ប្រភេទមូលដ្ឋាន
-int[] numbers = {1, 2, 3, 4, 5};
-String[] fruits = {"ផ្លែប៉ោម", "ក្រូច", "ផ្លែឈើ"};
-
-// ដែលគ្មានតម្លៃដំបូង (default 0 or null)
-int[] emptyArray = new int[10];
-String[] nameArray = new String[5];
-
-// ប្រើប្រាស់
-System.out.println(numbers[0]);    // 1
-System.out.println(fruits[1]);     // ក្រូច
-System.out.println(numbers.length); // 5
-
-// ផ្លាស់ប្តូរតម្លៃ
-numbers[0] = 10;
-```
-
-###  ឧទាហរណ៍ពង្រីក
-
-```java
-public class DataTypesExample {
+// HelloWorld.java
+public class HelloWorld {
     public static void main(String[] args) {
-        // Integer types
-        int age = 25;
-        long population = 8000000000L;
-        
-        // Floating point
-        double salary = 5000.50;
-        float discount = 15.5f;
-        
-        // Boolean
-        boolean isStudent = true;
-        boolean isWorking = false;
-        
-        // Character
-        char grade = 'A';
-        
-        // String
-        String name = "ដាវីដ";
-        String city = "ក្រុងភ្នំពេញ";
-        
-        // បោះពុម្ព
-        System.out.println("ឈ្មោះ: " + name);
-        System.out.println("អាយុ: " + age);
-        System.out.println("ថ្នាក់: " + grade);
-        System.out.println("ប្រាក់ឈានលើកតែមួយ: " + salary);
-        System.out.println("ឃ្នាលេខលេខ: " + city);
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+**Breaking it down:**
+
+| Part | Meaning |
+|---|---|
+| `public class HelloWorld` | Class name must match the filename (`HelloWorld.java`) |
+| `public static void main(String[] args)` | Entry point — where the JVM starts execution |
+| `System.out.println(...)` | Prints text to the console, followed by a newline |
+
+---
+
+## 4. Variables & Data Types
+
+```java
+public class DataTypes {
+    public static void main(String[] args) {
+        // Primitive data types
+        int age = 25;                  // Whole numbers (32-bit)
+        long population = 8_000_000_000L; // Larger whole numbers (64-bit, note the L suffix)
+        double price = 19.99;           // Decimal numbers (64-bit)
+        float temperature = 36.6f;      // Decimal numbers (32-bit, note the f suffix)
+        boolean isActive = true;        // true or false
+        char grade = 'A';               // A single character
+        byte smallNumber = 127;         // -128 to 127
+        short mediumNumber = 32000;     // -32,768 to 32,767
+
+        // Reference type: String (not primitive, but used constantly)
+        String name = "Sophea";
+
+        // Constants (cannot be reassigned)
+        final double PI = 3.14159;
+
+        // Type inference (Java 10+)
+        var city = "Phnom Penh"; // Compiler infers this is a String
+
+        // Printing values
+        System.out.println("Name: " + name + ", Age: " + age);
+        System.out.printf("Price: $%.2f%n", price); // Formatted output
+
+        // Type casting
+        double d = 9.78;
+        int i = (int) d; // Explicit cast: truncates to 9 (data loss)
+
+        int x = 10;
+        double y = x; // Implicit cast: int -> double (no data loss)
     }
 }
 ```
 
 ---
 
-##  អនុគមន៍
-
-### អនុគមន៍មូលដ្ឋាន
+## 5. Operators
 
 ```java
-// ឧទាហរណ៍ 1: void method (មិនផ្តល់តម្លៃ)
-public static void greet() {
-    System.out.println("សួស្តីលោក!");
-}
-
-// ឧទាហរណ៍ 2: return method
-public static int add(int a, int b) {
-    return a + b;  // ផ្តល់តម្លៃ
-}
-
-// ឧទាហរណ៍ 3: method ដែលមាន parameters
-public static void printInfo(String name, int age) {
-    System.out.println("ឈ្មោះ: " + name);
-    System.out.println("អាយុ: " + age);
-}
-```
-
-### ការហៅ methods
-
-```java
-public class MethodExample {
-    
-    // method ដែលគណនាក្នុង square
-    public static int square(int number) {
-        return number * number;
-    }
-    
-    // method ដែលបង្ហាញព័ត៌មាន
-    public static void showUserInfo(String name, int age, double salary) {
-        System.out.println("=== ព័ត៌មាននៃ User ===");
-        System.out.println("ឈ្មោះ: " + name);
-        System.out.println("អាយុ: " + age);
-        System.out.println("ប្រាក់ឈានលើកតែមួយ: " + salary);
-    }
-    
-    // method ដែលតម្រើញលេខធំបំផុត
-    public static int findMax(int a, int b) {
-        return (a > b) ? a : b;
-    }
-    
+public class Operators {
     public static void main(String[] args) {
-        // ហៅ methods
-        int result = square(5);
-        System.out.println("5² = " + result);  // 25
-        
-        showUserInfo("សូចា", 30, 5000);
-        
-        int max = findMax(10, 20);
-        System.out.println("លេខធំបំផុត: " + max);  // 20
+        // Arithmetic
+        System.out.println(10 + 5);  // 15
+        System.out.println(10 - 5);  // 5
+        System.out.println(10 * 5);  // 50
+        System.out.println(10 / 3);  // 3  (integer division truncates)
+        System.out.println(10.0 / 3); // 3.333...
+        System.out.println(10 % 3);  // 1  (remainder)
+
+        // Increment/decrement
+        int count = 0;
+        count++;   // count = 1
+        count--;   // count = 0
+        ++count;   // Pre-increment: increments before use
+
+        // Comparison
+        System.out.println(5 == 5);   // true
+        System.out.println(5 != 3);   // true
+        System.out.println(5 > 3);    // true
+
+        // Logical
+        boolean a = true, b = false;
+        System.out.println(a && b);   // false (AND)
+        System.out.println(a || b);   // true  (OR)
+        System.out.println(!a);       // false (NOT)
+
+        // Ternary operator
+        int score = 85;
+        String result = (score >= 60) ? "Pass" : "Fail";
+
+        // String comparison — ALWAYS use .equals(), never ==
+        String s1 = "hello";
+        String s2 = "hello";
+        System.out.println(s1.equals(s2)); // true — correct way to compare content
+        // s1 == s2 might be true or false depending on the string pool — don't rely on it
     }
 }
-```
-
-###  Method Overloading
-
-```java
-// method ដែលមាន overloading (ឈ្មោះដូច ប៉ុន្តែ parameters ខុស)
-public static int add(int a, int b) {
-    return a + b;
-}
-
-public static double add(double a, double b) {
-    return a + b;
-}
-
-public static String add(String a, String b) {
-    return a + b;  // concatenate
-}
-
-// ការប្រើប្រាស់
-System.out.println(add(5, 10));              // 15 (int)
-System.out.println(add(5.5, 10.5));          // 16.0 (double)
-System.out.println(add("សួស្តី", " លោក")); // សួស្តី លោក (String)
 ```
 
 ---
 
-##  ទិន្នន័យលម្អិត
-
-### ប្របាស់ប្រកាស (If-Else)
+## 6. Control Flow
 
 ```java
-public class IfElseExample {
+public class ControlFlow {
     public static void main(String[] args) {
-        int age = 18;
-        
-        // ប្របាស់ IF ឯកលេខ
-        if (age >= 18) {
-            System.out.println("អ្នកមានលក្ខណៈលក្ខ");
-        }
-        
-        // IF-ELSE (មាន 2 ផ្លូវ)
-        if (age < 18) {
-            System.out.println("អ្នកក្មេង");
+        int score = 75;
+
+        // if / else if / else
+        if (score >= 90) {
+            System.out.println("Grade: A");
+        } else if (score >= 70) {
+            System.out.println("Grade: B");
         } else {
-            System.out.println("អ្នកធំ");
+            System.out.println("Grade: C or below");
         }
-        
-        // IF-ELSE IF-ELSE (មាន 3+ ផ្លូវ)
-        if (age < 13) {
-            System.out.println("កុមារ");
-        } else if (age < 18) {
-            System.out.println("យុវជន");
-        } else if (age < 60) {
-            System.out.println("មនុស្សពេញលេញ");
-        } else {
-            System.out.println("មនុស្សចាស់");
-        }
-    }
-}
-```
 
-### ប្របាស់ Switch (ផ្លូវច្រើន)
-
-```java
-public class SwitchExample {
-    public static void main(String[] args) {
+        // switch statement (traditional)
         int day = 3;
-        String dayName;
-        
         switch (day) {
             case 1:
-                dayName = "ច័ន្ទ";
+                System.out.println("Monday");
                 break;
             case 2:
-                dayName = "អង្គារ";
-                break;
-            case 3:
-                dayName = "ពុធ";
-                break;
-            case 4:
-                dayName = "ព្រហស្បតិ៍";
-                break;
-            case 5:
-                dayName = "សុក្រ";
-                break;
-            case 6:
-                dayName = "សៅរ៍";
-                break;
-            case 7:
-                dayName = "អាទិត្យ";
+                System.out.println("Tuesday");
                 break;
             default:
-                dayName = "ថ្ងៃមិនស្គាល់";
+                System.out.println("Another day");
+                break;
         }
-        
-        System.out.println("ថ្ងៃ: " + dayName);
-    }
-}
-```
 
-### រង្វិលជុំ (Loops)
+        // switch expression (modern, Java 14+)
+        String dayName = switch (day) {
+            case 1 -> "Monday";
+            case 2 -> "Tuesday";
+            case 3 -> "Wednesday";
+            default -> "Unknown";
+        };
+        System.out.println(dayName);
 
-#### for Loop
-
-```java
-public class ForLoopExample {
-    public static void main(String[] args) {
-        // for loop ធម្មតា
-        System.out.println("=== FOR LOOP ===");
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("លេខ: " + i);
+        // for loop
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Iteration " + i);
         }
-        
-        // loop លើ array
-        System.out.println("\n=== ARRAY LOOP ===");
-        int[] numbers = {10, 20, 30, 40, 50};
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.println("Index " + i + ": " + numbers[i]);
-        }
-        
-        // enhanced for loop (foreach)
-        System.out.println("\n=== ENHANCED FOR ===");
-        for (int num : numbers) {
-            System.out.println("លេខ: " + num);
-        }
-    }
-}
-```
 
-#### while Loop
-
-```java
-public class WhileLoopExample {
-    public static void main(String[] args) {
         // while loop
-        System.out.println("=== WHILE LOOP ===");
-        int count = 1;
-        while (count <= 3) {
-            System.out.println("រាប់: " + count);
-            count++;
+        int n = 0;
+        while (n < 3) {
+            System.out.println("n = " + n);
+            n++;
         }
-        
-        // do-while (រត់យ៉ាងហោចណាស់ម្តង)
-        System.out.println("\n=== DO-WHILE ===");
-        int num = 1;
+
+        // do-while loop (runs at least once)
+        int m = 0;
         do {
-            System.out.println("លេខ: " + num);
-            num++;
-        } while (num <= 3);
-    }
-}
-```
+            System.out.println("m = " + m);
+            m++;
+        } while (m < 3);
 
-###  Operators (ប្រតិបត្តិកម្ម)
+        // enhanced for-each loop (for arrays and collections)
+        int[] numbers = {1, 2, 3, 4, 5};
+        for (int num : numbers) {
+            System.out.println(num);
+        }
 
-```java
-public class OperatorsExample {
-    public static void main(String[] args) {
-        int a = 10, b = 5;
-        
-        // Arithmetic operators (ដកូលគណិត)
-        System.out.println("a + b = " + (a + b));  // 15
-        System.out.println("a - b = " + (a - b));  // 5
-        System.out.println("a * b = " + (a * b));  // 50
-        System.out.println("a / b = " + (a / b));  // 2
-        System.out.println("a % b = " + (a % b));  // 0
-        
-        // Comparison operators (ប្របាស់ប្រៀបធៀប)
-        System.out.println("\n=== Comparison ===");
-        System.out.println("a > b: " + (a > b));   // true
-        System.out.println("a < b: " + (a < b));   // false
-        System.out.println("a == b: " + (a == b)); // false
-        System.out.println("a != b: " + (a != b)); // true
-        
-        // Logical operators (ឡូហ្សីក)
-        System.out.println("\n=== Logical ===");
-        boolean x = true, y = false;
-        System.out.println("x && y: " + (x && y)); // false (AND)
-        System.out.println("x || y: " + (x || y)); // true (OR)
-        System.out.println("!x: " + (!x));         // false (NOT)
-        
-        // Assignment operators (ផ្តល់តម្លៃ)
-        int c = 10;
-        c += 5;   // c = c + 5 (15)
-        c -= 3;   // c = c - 3 (12)
-        c *= 2;   // c = c * 2 (24)
+        // break and continue
+        for (int i = 0; i < 10; i++) {
+            if (i == 3) continue; // Skip this iteration
+            if (i == 6) break;    // Exit the loop entirely
+            System.out.println(i);
+        }
     }
 }
 ```
 
 ---
 
-##  OOP Concepts
-
-Object-Oriented Programming គឺជាគោលគំនិតដ៏សំខាន់នៃ Java
-
-###  Class និង Object
+## 7. Arrays
 
 ```java
-// ស្ថាបនា class (blueprint)
-public class Car {
-    // Attributes (ឯកតា)
-    public String brand;
-    public String color;
-    public int year;
-    
-    // Constructor (ផ្តើមដំបូង)
-    public Car(String brand, String color, int year) {
-        this.brand = brand;
-        this.color = color;
-        this.year = year;
-    }
-    
-    // Methods (អនុគមន៍/កម្មវិធី)
-    public void displayInfo() {
-        System.out.println("ម៉ាក: " + brand);
-        System.out.println("ពណ៌: " + color);
-        System.out.println("ឆ្នាំ: " + year);
-    }
-    
-    public void drive() {
-        System.out.println(brand + " កំពុងដ្ឋាននាពេលលើ");
-    }
-    
-    public void stop() {
-        System.out.println(brand + " ឈប់");
-    }
-}
-
-// ការប្រើប្រាស់
-public class Main {
+public class Arrays1 {
     public static void main(String[] args) {
-        // បង្កើត object (instance)
-        Car myCar = new Car("Toyota", "ក្រហម", 2020);
-        
-        // ហៅ methods
-        myCar.displayInfo();
-        myCar.drive();
-        myCar.stop();
+        // Declaring and initializing arrays
+        int[] numbers = {10, 20, 30, 40, 50};
+        String[] names = new String[3]; // Array of size 3, all elements null
+        names[0] = "Sophea";
+        names[1] = "Dara";
+
+        // Accessing elements
+        System.out.println(numbers[0]);       // 10
+        System.out.println(numbers.length);   // 5 (property, not a method)
+
+        // Looping through an array
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
+        }
+
+        // 2D arrays
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        System.out.println(matrix[1][2]); // 6 (row 1, column 2)
+
+        // Using java.util.Arrays utility methods
+        int[] copy = java.util.Arrays.copyOf(numbers, numbers.length);
+        java.util.Arrays.sort(numbers); // Sorts in place, ascending
+        System.out.println(java.util.Arrays.toString(numbers)); // Readable print
+
+        boolean contains = java.util.Arrays.asList(10, 20, 30).contains(20);
+        System.out.println(contains); // true
     }
 }
 ```
 
-###  Encapsulation (ការលាក់ទុក)
+---
+
+## 8. Methods
 
 ```java
-public class Student {
-    // private - មិនអាចចូលដោយផ្ទាល់
+public class Methods {
+
+    // Basic method with a return value
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    // Void method — performs an action, returns nothing
+    static void printGreeting(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
+
+    // Method overloading — same name, different parameters
+    static double add(double a, double b) {
+        return a + b;
+    }
+
+    // Varargs — accepts a variable number of arguments
+    static int sum(int... numbers) {
+        int total = 0;
+        for (int n : numbers) {
+            total += n;
+        }
+        return total;
+    }
+
+    // Recursive method
+    static int factorial(int n) {
+        if (n <= 1) return 1;          // Base case
+        return n * factorial(n - 1);   // Recursive case
+    }
+
+    public static void main(String[] args) {
+        System.out.println(add(3, 4));         // 7
+        System.out.println(add(3.5, 4.2));     // 7.7 (overloaded version)
+        printGreeting("Sophea");
+        System.out.println(sum(1, 2, 3, 4, 5)); // 15
+        System.out.println(factorial(5));       // 120
+    }
+}
+```
+
+---
+
+## 9. OOP: Classes & Objects
+
+```java
+// Person.java
+public class Person {
+    // Fields (instance variables) — private for encapsulation
     private String name;
-    private double gpa;
-    
-    // Getters - ដើម្បីទទួលតម្លៃ
+    private int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name; // "this" refers to the current object's field
+        this.age = age;
+    }
+
+    // Getters and setters (encapsulation — controlled access to fields)
     public String getName() {
         return name;
     }
-    
-    public double getGpa() {
-        return gpa;
-    }
-    
-    // Setters - ដើម្បីកំណត់តម្លៃ (ដោយលក្ខខណ្ឌ)
+
     public void setName(String name) {
-        if (name != null && !name.isEmpty()) {
-            this.name = name;
-        }
+        this.name = name;
     }
-    
-    public void setGpa(double gpa) {
-        // ត្រូវលក្ខណៈលក្ខ 0-4.0
-        if (gpa >= 0 && gpa <= 4.0) {
-            this.gpa = gpa;
-        }
+
+    public int getAge() {
+        return age;
     }
-    
-    // Business logic
-    public String getGradeLevel() {
-        if (gpa >= 3.5) return "A";
-        if (gpa >= 3.0) return "B";
-        if (gpa >= 2.0) return "C";
-        return "F";
+
+    public void setAge(int age) {
+        if (age < 0) {
+            throw new IllegalArgumentException("Age cannot be negative");
+        }
+        this.age = age;
+    }
+
+    // Instance method
+    public String introduce() {
+        return "Hi, I'm " + name + " and I'm " + age + " years old.";
+    }
+
+    // Overriding Object's toString() for readable printing
+    @Override
+    public String toString() {
+        return "Person{name='" + name + "', age=" + age + "}";
+    }
+
+    // Overriding equals() and hashCode() for correct comparison/collections use
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Person)) return false;
+        Person other = (Person) obj;
+        return age == other.age && name.equals(other.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(name, age);
     }
 }
-
-// ការប្រើ
-Student student = new Student();
-student.setName("សូចា");
-student.setGpa(3.8);
-System.out.println("ឈ្មោះ: " + student.getName());
-System.out.println("ថ្នាក់: " + student.getGradeLevel()); // A
 ```
 
-###  Inheritance (ការបន្ត/មរតក)
+```java
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        Person p1 = new Person("Sophea", 25);
+        System.out.println(p1.introduce());     // Hi, I'm Sophea and I'm 25 years old.
+        System.out.println(p1);                  // Person{name='Sophea', age=25}
+
+        p1.setAge(26);
+        System.out.println(p1.getAge());          // 26
+
+        Person p2 = new Person("Sophea", 26);
+        System.out.println(p1.equals(p2));        // true (same name & age)
+    }
+}
+```
+
+**Java records (modern, concise data classes — Java 16+):**
 
 ```java
-// Parent class (ក្រុងមា)
+// Immutable data class in one line — auto-generates constructor, getters, equals, hashCode, toString
+public record PersonRecord(String name, int age) { }
+```
+
+```java
+PersonRecord p = new PersonRecord("Dara", 30);
+System.out.println(p.name()); // "Dara" — auto-generated accessor
+System.out.println(p);        // PersonRecord[name=Dara, age=30]
+```
+
+---
+
+## 10. Inheritance & Polymorphism
+
+```java
+// Animal.java — base/parent class
 public class Animal {
     protected String name;
-    
+
     public Animal(String name) {
         this.name = name;
     }
-    
-    public void eat() {
-        System.out.println(name + " កំពុងញ៉ាំ");
-    }
-    
-    public void sleep() {
-        System.out.println(name + " កំពុងដេក");
+
+    public String makeSound() {
+        return name + " makes a sound";
     }
 }
+```
 
-// Child class (ក្រុងកូន) - សង្វាក់
+```java
+// Dog.java — subclass/child class
 public class Dog extends Animal {
-    public Dog(String name) {
-        super(name); // ហៅ parent constructor
+    private String breed;
+
+    public Dog(String name, String breed) {
+        super(name); // Call the parent class's constructor
+        this.breed = breed;
     }
-    
-    // Override (ធ្វើឡើងវិញ) method មាន
-    @Override
-    public void eat() {
-        System.out.println(name + " កំពុងញ៉ាំសាច់");
+
+    @Override // Overriding the parent's method
+    public String makeSound() {
+        return name + " barks! (a " + breed + ")";
     }
-    
-    // Method ថ្មីរបស់ Dog
-    public void bark() {
-        System.out.println(name + " ឪឡ ឪឡ!");
+
+    public String fetch() {
+        return name + " fetches the ball!";
     }
 }
-
-// ការប្រើ
-Dog myDog = new Dog("បង់ក");
-myDog.eat();    // បង់ក កំពុងញ៉ាំសាច់
-myDog.sleep();  // បង់ក កំពុងដេក
-myDog.bark();   // បង់ក ឪឡ ឪឡ!
 ```
 
-###  Polymorphism (ច្រើនម៉ាត)
-
 ```java
-// Interface (កម្មវិធីលម្អិត)
-public interface Animal {
-    void makeSound();
-    void move();
-}
-
-// Implementation 1
-public class Cat implements Animal {
-    @Override
-    public void makeSound() {
-        System.out.println("ម៉ៀវ ម៉ៀវ!");
-    }
-    
-    @Override
-    public void move() {
-        System.out.println("ឃ្មុំកំពុងដើរលឿង");
-    }
-}
-
-// Implementation 2
-public class Dog implements Animal {
-    @Override
-    public void makeSound() {
-        System.out.println("ឆ្នូត ឆ្នូត!");
-    }
-    
-    @Override
-    public void move() {
-        System.out.println("ឆ្នាប់កំពុងដើរយឺត");
-    }
-}
-
-// ការប្រើ
-Animal cat = new Cat();
-Animal dog = new Dog();
-
-cat.makeSound();  // ម៉ៀវ ម៉ៀវ!
-dog.makeSound();  // ឆ្នូត ឆ្នូត!
-```
-
----
-
-##  Exception Handling
-
-ការគ្រប់គ្រងកំហុស
-
-###  Try-Catch
-
-```java
-public class ExceptionExample {
+public class Main {
     public static void main(String[] args) {
-        try {
-            // កូដដែលអាច throw exception
-            String text = "សួស្តី";
-            int number = Integer.parseInt(text); // Error!
-            
-        } catch (NumberFormatException e) {
-            // ចាប់កំហុស specific
-            System.out.println("កំហុស: មិនអាចបម្លែងទៅលេខ");
-            System.out.println("សារ: " + e.getMessage());
-            
-        } catch (Exception e) {
-            // ចាប់ exception ទូទៅ
-            System.out.println("មានកំហុស: " + e.getMessage());
+        Animal genericAnimal = new Animal("Creature");
+        System.out.println(genericAnimal.makeSound()); // "Creature makes a sound"
+
+        Dog dog = new Dog("Rex", "Golden Retriever");
+        System.out.println(dog.makeSound()); // "Rex barks! (a Golden Retriever)"
+        System.out.println(dog.fetch());
+
+        // Polymorphism — a Dog IS-A Animal, so this reference type works
+        Animal polymorphicDog = new Dog("Max", "Poodle");
+        System.out.println(polymorphicDog.makeSound()); // Calls Dog's overridden version
+
+        // instanceof check
+        if (polymorphicDog instanceof Dog) {
+            System.out.println("This animal is a dog");
         }
     }
 }
 ```
 
-###  Try-Catch-Finally
+---
+
+## 11. Interfaces & Abstract Classes
 
 ```java
-public class TryCatchFinallyExample {
+// Interface — a contract of methods a class must implement
+public interface Payable {
+    double calculatePayment(); // Abstract method — no body
+
+    // Default method (Java 8+) — has a body, classes can use it as-is or override
+    default String describe() {
+        return "This entity is payable.";
+    }
+}
+```
+
+```java
+// Abstract class — a partial implementation, cannot be instantiated directly
+public abstract class Employee {
+    protected String name;
+
+    public Employee(String name) {
+        this.name = name;
+    }
+
+    // Abstract method — must be implemented by subclasses
+    public abstract double calculateSalary();
+
+    // Concrete method — shared by all subclasses
+    public String getName() {
+        return name;
+    }
+}
+```
+
+```java
+// FullTimeEmployee.java — implements both the abstract class and an interface
+public class FullTimeEmployee extends Employee implements Payable {
+    private double monthlySalary;
+
+    public FullTimeEmployee(String name, double monthlySalary) {
+        super(name);
+        this.monthlySalary = monthlySalary;
+    }
+
+    @Override
+    public double calculateSalary() {
+        return monthlySalary;
+    }
+
+    @Override
+    public double calculatePayment() {
+        return calculateSalary();
+    }
+}
+```
+
+```java
+public class Main {
     public static void main(String[] args) {
+        FullTimeEmployee emp = new FullTimeEmployee("Sophea", 1500.0);
+        System.out.println(emp.getName() + ": $" + emp.calculateSalary());
+        System.out.println(emp.describe()); // Uses the interface's default method
+    }
+}
+```
+
+**Interface vs abstract class:**
+
+| | Interface | Abstract Class |
+|---|---|---|
+| Instantiable? | No | No |
+| Multiple inheritance | A class can implement many interfaces | A class can extend only one abstract class |
+| Fields | Only `public static final` constants | Any field type, any visibility |
+| Method bodies | Only `default`/`static` methods have bodies | Any method can have a body |
+
+---
+
+## 12. Exception Handling
+
+```java
+public class ExceptionHandling {
+
+    static int divide(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException("Cannot divide by zero");
+        }
+        return a / b;
+    }
+
+    public static void main(String[] args) {
+        // try / catch / finally
         try {
-            int result = 10 / 0;  // ArithmeticException
-            
+            int result = divide(10, 0);
+            System.out.println(result);
         } catch (ArithmeticException e) {
-            System.out.println("មិនអាចចែកលេខសូន្យ!");
-            
-        } finally {
-            // ដំណើរការក្នុងករណីទាំងអស់
-            System.out.println("Finally block រត់ក្នុងលើក");
-        }
-    }
-}
-```
-
-###  Throws Keyword
-
-```java
-public class ThrowsExample {
-    
-    public static void readFile(String filename) throws Exception {
-        if (filename == null) {
-            throw new Exception("Filename cannot be null");
-        }
-        System.out.println("Reading: " + filename);
-    }
-    
-    public static void main(String[] args) {
-        try {
-            readFile(null);
-        } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
+        } finally {
+            System.out.println("This always runs, error or not");
         }
-    }
-}
-```
 
----
-
-##  Collections
-
-###  ArrayList (អរេ Dynamics)
-
-```java
-import java.util.ArrayList;
-
-public class ArrayListExample {
-    public static void main(String[] args) {
-        // បង្កើត ArrayList
-        ArrayList<String> fruits = new ArrayList<>();
-        
-        // បន្ថែម (add)
-        fruits.add("ផ្លែប៉ោម");
-        fruits.add("ក្រូច");
-        fruits.add("ផ្លែឈើ");
-        
-        // ពត៌មាន
-        System.out.println("ចំនួន: " + fruits.size());        // 3
-        System.out.println("Index 0: " + fruits.get(0));      // ផ្លែប៉ោម
-        
-        // កែប្រែ (modify)
-        fruits.set(1, "ម្នាស");
-        
-        // លុប (remove)
-        fruits.remove(2);
-        
-        // រង្វិលជុំ
-        for (String fruit : fruits) {
-            System.out.println("- " + fruit);
-        }
-    }
-}
-```
-
-###  HashMap (ផែនទីលេខ)
-
-```java
-import java.util.HashMap;
-
-public class HashMapExample {
-    public static void main(String[] args) {
-        // បង្កើត HashMap (Key-Value pair)
-        HashMap<String, Integer> ages = new HashMap<>();
-        
-        // បន្ថែម
-        ages.put("សូចា", 25);
-        ages.put("ដាវីដ", 30);
-        ages.put("សារ៉ា", 28);
-        
-        // ទទួលបាន
-        System.out.println("អាយុរបស់សូចា: " + ages.get("សូចា"));
-        
-        // ឆែក (contain)
-        if (ages.containsKey("ដាវីដ")) {
-            System.out.println("ដាវីដ មាននៅក្នុង map");
-        }
-        
-        // រង្វិលជុំ
-        for (String key : ages.keySet()) {
-            System.out.println(key + ": " + ages.get(key));
-        }
-    }
-}
-```
-
-###  HashSet (សំណុំលេខ)
-
-```java
-import java.util.HashSet;
-
-public class HashSetExample {
-    public static void main(String[] args) {
-        // បង្កើត HashSet (គ្មានលេខស្ទួន)
-        HashSet<Integer> numbers = new HashSet<>();
-        
-        // បន្ថែម
-        numbers.add(10);
-        numbers.add(20);
-        numbers.add(10); // មិនបន្ថែម (duplicate)
-        numbers.add(30);
-        
-        System.out.println("ចំនួន: " + numbers.size()); // 3
-        
-        // ឆែក
-        if (numbers.contains(20)) {
-            System.out.println("20 មាននៅក្នុង set");
-        }
-    }
-}
-```
-
----
-
-##  File I/O 
-
-### អានឯកសារ
-
-```java
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
-public class FileReadExample {
-    public static void main(String[] args) {
+        // Catching multiple exception types
         try {
-            BufferedReader reader = new BufferedReader(
-                new FileReader("sample.txt")
-            );
-            
+            int[] arr = new int[5];
+            arr[10] = 1; // Throws ArrayIndexOutOfBoundsException
+        } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
+            System.out.println("Caught: " + e.getMessage());
+        }
+
+        // try-with-resources — automatically closes resources (e.g. files, streams)
+        try (java.io.BufferedReader reader = new java.io.BufferedReader(
+                new java.io.FileReader("data.txt"))) {
+            System.out.println(reader.readLine());
+        } catch (java.io.IOException e) {
+            System.out.println("File error: " + e.getMessage());
+        }
+
+        // Custom exceptions
+        try {
+            validateAge(-5);
+        } catch (InvalidAgeException e) {
+            System.out.println("Validation failed: " + e.getMessage());
+        }
+    }
+
+    static void validateAge(int age) throws InvalidAgeException {
+        if (age < 0) {
+            throw new InvalidAgeException("Age cannot be negative: " + age);
+        }
+    }
+}
+
+// Custom checked exception
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+```
+
+**Checked vs unchecked exceptions:**
+
+| Type | Examples | Must be declared/caught? |
+|---|---|---|
+| Checked | `IOException`, `SQLException` | Yes — compiler enforces it |
+| Unchecked (RuntimeException) | `NullPointerException`, `ArithmeticException` | No — optional |
+
+---
+
+## 13. Collections Framework
+
+```java
+import java.util.*;
+
+public class Collections1 {
+    public static void main(String[] args) {
+
+        // --- List (ordered, allows duplicates) ---
+        List<String> fruits = new ArrayList<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Apple"); // Duplicates allowed
+        fruits.remove("Banana");
+        System.out.println(fruits);                // [Apple, Apple]
+        System.out.println(fruits.contains("Apple")); // true
+        System.out.println(fruits.get(0));           // Apple
+
+        List<Integer> linkedList = new LinkedList<>(); // Better for frequent insert/delete
+
+        // --- Set (no duplicates) ---
+        Set<String> uniqueNames = new HashSet<>();     // No guaranteed order
+        uniqueNames.add("Sophea");
+        uniqueNames.add("Sophea"); // Ignored — already exists
+        System.out.println(uniqueNames.size()); // 1
+
+        Set<String> sortedSet = new TreeSet<>(); // Automatically sorted
+        sortedSet.add("banana");
+        sortedSet.add("apple");
+        System.out.println(sortedSet); // [apple, banana]
+
+        // --- Map (key-value pairs) ---
+        Map<String, Integer> ages = new HashMap<>();
+        ages.put("Sophea", 25);
+        ages.put("Dara", 30);
+        ages.put("Sophea", 26); // Overwrites the previous value
+
+        System.out.println(ages.get("Sophea"));        // 26
+        System.out.println(ages.getOrDefault("Unknown", 0)); // 0 (fallback)
+        System.out.println(ages.containsKey("Dara"));    // true
+
+        for (Map.Entry<String, Integer> entry : ages.entrySet()) {
+            System.out.println(entry.getKey() + " is " + entry.getValue());
+        }
+
+        Map<String, Integer> sortedMap = new TreeMap<>(ages); // Sorted by key
+
+        // --- Queue (FIFO — first in, first out) ---
+        Queue<String> queue = new LinkedList<>();
+        queue.offer("First");
+        queue.offer("Second");
+        System.out.println(queue.poll()); // "First" — removes and returns the head
+
+        // --- Deque (double-ended queue — can act as a stack too) ---
+        Deque<Integer> stack = new ArrayDeque<>();
+        stack.push(1);
+        stack.push(2);
+        System.out.println(stack.pop()); // 2 (LIFO — last in, first out)
+    }
+}
+```
+
+---
+
+## 14. Generics
+
+```java
+// A generic class — works with any type, decided at usage time
+public class Box<T> {
+    private T content;
+
+    public void set(T content) {
+        this.content = content;
+    }
+
+    public T get() {
+        return content;
+    }
+}
+```
+
+```java
+public class GenericsDemo {
+    // Generic method
+    static <T> void printArray(T[] array) {
+        for (T item : array) {
+            System.out.println(item);
+        }
+    }
+
+    // Bounded type parameter — T must be a Number or subclass
+    static <T extends Number> double sumAll(List<T> numbers) {
+        double sum = 0;
+        for (T n : numbers) {
+            sum += n.doubleValue();
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Box<String> stringBox = new Box<>();
+        stringBox.set("Hello");
+        System.out.println(stringBox.get()); // "Hello"
+
+        Box<Integer> intBox = new Box<>();
+        intBox.set(42);
+        System.out.println(intBox.get()); // 42
+
+        Integer[] numbers = {1, 2, 3};
+        printArray(numbers);
+
+        List<Integer> ints = List.of(1, 2, 3, 4);
+        System.out.println(sumAll(ints)); // 10.0
+
+        // Wildcards
+        List<? extends Number> readOnlyNumbers = ints; // Accepts any Number subtype, read-only
+    }
+}
+```
+
+---
+
+## 15. Streams & Lambda Expressions
+
+```java
+import java.util.*;
+import java.util.stream.*;
+
+public class StreamsDemo {
+
+    record Product(String name, double price, boolean inStock) { }
+
+    public static void main(String[] args) {
+        List<Product> products = List.of(
+            new Product("Laptop", 1200, true),
+            new Product("Mouse", 25, true),
+            new Product("Monitor", 300, false),
+            new Product("Keyboard", 75, true)
+        );
+
+        // Lambda expressions — a compact way to write a function inline
+        Comparator<Product> byPrice = (p1, p2) -> Double.compare(p1.price(), p2.price());
+
+        // filter + map + collect
+        List<String> inStockNames = products.stream()
+            .filter(p -> p.inStock())
+            .map(Product::name)              // Method reference — shorthand for p -> p.name()
+            .collect(Collectors.toList());
+        System.out.println(inStockNames); // [Laptop, Mouse, Keyboard]
+
+        // sorted
+        List<Product> sortedByPrice = products.stream()
+            .sorted(byPrice)
+            .collect(Collectors.toList());
+
+        // reduce — combine into a single value
+        double totalPrice = products.stream()
+            .mapToDouble(Product::price)
+            .sum();
+        System.out.println(totalPrice); // 1600.0
+
+        // count, min, max
+        long inStockCount = products.stream().filter(Product::inStock).count();
+        Optional<Product> cheapest = products.stream().min(byPrice);
+        cheapest.ifPresent(p -> System.out.println("Cheapest: " + p.name()));
+
+        // anyMatch / allMatch
+        boolean hasExpensive = products.stream().anyMatch(p -> p.price() > 1000);
+        boolean allInStock = products.stream().allMatch(Product::inStock);
+
+        // grouping
+        Map<Boolean, List<Product>> groupedByStock = products.stream()
+            .collect(Collectors.groupingBy(Product::inStock));
+
+        // Functional interfaces used with lambdas
+        Runnable task = () -> System.out.println("Task running");
+        task.run();
+
+        java.util.function.Function<Integer, Integer> square = n -> n * n;
+        System.out.println(square.apply(5)); // 25
+
+        java.util.function.Predicate<Integer> isEven = n -> n % 2 == 0;
+        System.out.println(isEven.test(4)); // true
+    }
+}
+```
+
+---
+
+## 16. File I/O
+
+```java
+import java.io.*;
+import java.nio.file.*;
+import java.util.List;
+
+public class FileIODemo {
+    public static void main(String[] args) throws IOException {
+
+        // --- Writing to a file (modern NIO API — recommended) ---
+        Path path = Paths.get("output.txt");
+        Files.writeString(path, "Hello, File I/O!\nSecond line.");
+
+        // --- Reading an entire file as a String ---
+        String content = Files.readString(path);
+        System.out.println(content);
+
+        // --- Reading all lines into a List ---
+        List<String> lines = Files.readAllLines(path);
+        for (String line : lines) {
+            System.out.println(line);
+        }
+
+        // --- Appending to a file ---
+        Files.writeString(path, "\nAppended line", StandardOpenOption.APPEND);
+
+        // --- Traditional BufferedReader/Writer (still widely used) ---
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("log.txt"))) {
+            writer.write("Log entry 1");
+            writer.newLine();
+            writer.write("Log entry 2");
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader("log.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
-            
-            reader.close();
-            
-        } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
         }
-    }
-}
-```
 
-### សរសេរឯកសារ
+        // --- Checking if a file exists ---
+        System.out.println(Files.exists(path)); // true
 
-```java
-import java.io.FileWriter;
-import java.io.IOException;
-
-public class FileWriteExample {
-    public static void main(String[] args) {
-        try {
-            FileWriter writer = new FileWriter("output.txt");
-            
-            writer.write("សួស្តីលោក ពិភពលោក!\n");
-            writer.write("នេះគឺឯកសារដែលសរសេរដោយ Java");
-            
-            writer.close();
-            System.out.println("ឯកសារបានសរសេរដោយរីករាយ");
-            
-        } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
+        // --- Deleting a file ---
+        Files.deleteIfExists(Paths.get("log.txt"));
     }
 }
 ```
 
 ---
 
-##  ឧទាហរណ៍ប្រឹក្សាពេញលេញ
+## 17. Multithreading Basics
 
 ```java
-import java.util.ArrayList;
-import java.util.Scanner;
+public class ThreadingDemo {
 
-/**
- * Student Management System
- * 
- * Features:
- * - Add students
- * - Display students
- * - Search students
- */
-public class StudentManagementSystem {
-    
-    public static void main(String[] args) {
-        ArrayList<Student> students = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
-        boolean running = true;
-        
-        while (running) {
-            System.out.println("\n=== ប្រព័ន្ធគ្រប់គ្រងសិស្ស ===");
-            System.out.println("1. បន្ថែមសិស្ស");
-            System.out.println("2. បង្ហាញសិស្សទាំងអស់");
-            System.out.println("3. ស្វែងរកសិស្ស");
-            System.out.println("4. ចាកចេញ");
-            System.out.print("ជ្រើសរើស: ");
-            
-            int choice = scanner.nextInt();
-            scanner.nextLine(); // Clear buffer
-            
-            switch (choice) {
-                case 1:
-                    System.out.print("ឈ្មោះ: ");
-                    String name = scanner.nextLine();
-                    System.out.print("អាយុ: ");
-                    int age = scanner.nextInt();
-                    System.out.print("GPA: ");
-                    double gpa = scanner.nextDouble();
-                    
-                    students.add(new Student(name, age, gpa));
-                    System.out.println("✅ បានបន្ថែមដោយរីករាយ");
-                    break;
-                    
-                case 2:
-                    if (students.isEmpty()) {
-                        System.out.println("គ្មានសិស្សនៅក្នុង");
-                    } else {
-                        for (int i = 0; i < students.size(); i++) {
-                            System.out.println((i + 1) + ". " + students.get(i));
-                        }
-                    }
-                    break;
-                    
-                case 3:
-                    System.out.print("ស្វែងរកឈ្មោះ: ");
-                    String searchName = scanner.nextLine();
-                    boolean found = false;
-                    
-                    for (Student student : students) {
-                        if (student.getName().equalsIgnoreCase(searchName)) {
-                            System.out.println("រកឃើញ: " + student);
-                            found = true;
-                            break;
-                        }
-                    }
-                    
-                    if (!found) {
-                        System.out.println("មិនរកឃើញសិស្ស");
-                    }
-                    break;
-                    
-                case 4:
-                    running = false;
-                    System.out.println("សូមបង្ហាញសំណេក!");
-                    break;
-                    
-                default:
-                    System.out.println("❌ ជ្រើសរើសមិនប្រាកដ");
+    // A simple task implementing Runnable
+    static class PrintTask implements Runnable {
+        private final String message;
+
+        PrintTask(String message) {
+            this.message = message;
+        }
+
+        @Override
+        public void run() {
+            for (int i = 0; i < 3; i++) {
+                System.out.println(message + " - " + i);
             }
         }
-        
-        scanner.close();
     }
-}
 
-// Student Class
-class Student {
-    private String name;
-    private int age;
-    private double gpa;
-    
-    public Student(String name, int age, double gpa) {
-        this.name = name;
-        this.age = age;
-        this.gpa = gpa;
+    public static void main(String[] args) throws InterruptedException {
+
+        // Creating and starting threads
+        Thread t1 = new Thread(new PrintTask("Thread A"));
+        Thread t2 = new Thread(new PrintTask("Thread B"));
+        t1.start();
+        t2.start();
+
+        // Waiting for threads to finish
+        t1.join();
+        t2.join();
+
+        // Using a lambda instead of a Runnable class
+        Thread t3 = new Thread(() -> System.out.println("Running from a lambda thread"));
+        t3.start();
+
+        // ExecutorService — modern, managed thread pool (preferred over raw Threads)
+        java.util.concurrent.ExecutorService executor =
+            java.util.concurrent.Executors.newFixedThreadPool(2);
+
+        executor.submit(() -> System.out.println("Task 1 running"));
+        executor.submit(() -> System.out.println("Task 2 running"));
+
+        executor.shutdown(); // Always shut down the pool when done
+
+        // Synchronization — preventing race conditions on shared data
+        Counter counter = new Counter();
+        Thread inc1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) counter.increment();
+        });
+        Thread inc2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) counter.increment();
+        });
+        inc1.start();
+        inc2.start();
+        inc1.join();
+        inc2.join();
+        System.out.println("Final count: " + counter.getCount()); // Always 2000
     }
-    
-    public String getName() {
-        return name;
-    }
-    
-    @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", gpa=" + gpa +
-                '}';
+
+    static class Counter {
+        private int count = 0;
+
+        // synchronized prevents two threads from modifying `count` at the same time
+        public synchronized void increment() {
+            count++;
+        }
+
+        public int getCount() {
+            return count;
+        }
     }
 }
 ```
 
 ---
 
-##  Best Practices & Tips
+## 18. Best Practices
 
-###  ល្បច (Do's)
+- ✅ Follow Java naming conventions: `ClassName` (PascalCase), `methodName`/`variableName` (camelCase), `CONSTANT_NAME` (UPPER_SNAKE_CASE)
+- ✅ Keep fields `private` and expose behavior through public methods (encapsulation)
+- ✅ Always compare objects (especially `String`) with `.equals()`, never `==`
+- ✅ Override `equals()` and `hashCode()` together, never just one
+- ✅ Prefer interfaces (`List`, `Map`) as variable types over concrete classes (`ArrayList`, `HashMap`)
+- ✅ Use try-with-resources for anything that implements `AutoCloseable` (files, streams, connections)
+- ✅ Favor immutability where possible — use `final` fields and records for data carriers
+- ✅ Use `Optional<T>` for methods that might not return a value, instead of returning `null`
+- ✅ Use `ExecutorService` instead of managing raw `Thread` objects manually
+- ✅ Write unit tests with **JUnit** for all non-trivial logic
+
+---
+
+## 19. Full Example Project
+
+A simple **Library Management** system combining OOP, collections, exceptions, and streams:
 
 ```java
-// 1. Use final សម្រាប់ constants
-final int MAX_USERS = 100;
-
-// 2. null check មុនប្រើ
-if (string != null && !string.isEmpty()) {
-    // process
-}
-
-// 3. try-with-resources (Auto close)
-try (BufferedReader reader = new BufferedReader(
-        new FileReader("file.txt"))) {
-    // read file
-} catch (IOException e) {
-    e.printStackTrace();
-}
-
-// 4. StringBuilder សម្រាប់ string concatenation
-StringBuilder sb = new StringBuilder();
-sb.append("Hello");
-sb.append(" ");
-sb.append("World");
-String result = sb.toString();
+// Book.java
+public record Book(String title, String author, boolean available) { }
 ```
-
-###  មិនគួរ (Don'ts)
 
 ```java
-// 1. មិនប្រើ raw types
-// ❌ ArrayList list = new ArrayList();
-// ✅ ArrayList<String> list = new ArrayList<>();
+// BookNotFoundException.java
+public class BookNotFoundException extends RuntimeException {
+    public BookNotFoundException(String title) {
+        super("Book not found: " + title);
+    }
+}
+```
 
-// 2. មិនចាប់ Exception generic
-// ❌ catch (Exception e) { }
-// ✅ catch (SpecificException e) { }
+```java
+// Library.java
+import java.util.*;
+import java.util.stream.*;
 
-// 3. មិនប្រើ == សម្រាប់ String comparison
-// ❌ if (str1 == str2) { }
-// ✅ if (str1.equals(str2)) { }
+public class Library {
+    private final List<Book> books = new ArrayList<>();
+
+    public void addBook(Book book) {
+        books.add(book);
+    }
+
+    public Book findByTitle(String title) {
+        return books.stream()
+            .filter(b -> b.title().equalsIgnoreCase(title))
+            .findFirst()
+            .orElseThrow(() -> new BookNotFoundException(title));
+    }
+
+    public List<Book> getAvailableBooks() {
+        return books.stream()
+            .filter(Book::available)
+            .collect(Collectors.toList());
+    }
+
+    public Map<String, List<Book>> groupByAuthor() {
+        return books.stream()
+            .collect(Collectors.groupingBy(Book::author));
+    }
+
+    public void printCatalog() {
+        books.forEach(b ->
+            System.out.println(b.title() + " by " + b.author() +
+                (b.available() ? " [Available]" : " [Checked Out]")));
+    }
+}
+```
+
+```java
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        Library library = new Library();
+        library.addBook(new Book("Effective Java", "Joshua Bloch", true));
+        library.addBook(new Book("Clean Code", "Robert Martin", false));
+        library.addBook(new Book("Java Concurrency", "Brian Goetz", true));
+
+        library.printCatalog();
+
+        System.out.println("\nAvailable books:");
+        library.getAvailableBooks().forEach(b -> System.out.println(b.title()));
+
+        try {
+            Book found = library.findByTitle("Clean Code");
+            System.out.println("\nFound: " + found);
+
+            library.findByTitle("Unknown Book"); // Throws BookNotFoundException
+        } catch (BookNotFoundException e) {
+            System.out.println("\nError: " + e.getMessage());
+        }
+    }
+}
 ```
 
 ---
 
-##  សង្ខេប Concepts
+## 20. Resources
 
-| Concept | អត្ថន័យ |
-|---------|---------|
-| **class** | Template សម្រាប់ objects |
-| **object** | Instance របស់ class |
-| **method** | Function នៅក្នុង class |
-| **attribute** | Variable នៅក្នុង class |
-| **constructor** | Special method ដែលផ្តើម object |
-| **inheritance** | Class ច្រើន extends one parent |
-| **polymorphism** | One interface, multiple forms |
-| **encapsulation** | Hide internal details |
-| **interface** | Contract សម្រាប់ classes |
-| **exception** | Error handling mechanism |
+- Official docs: `https://docs.oracle.com/en/java/`
+- Java tutorials: `https://docs.oracle.com/javase/tutorial/`
+- OpenJDK: `https://openjdk.org/`
 
 ---
 
-## 🔗 Resources
-
-- [Oracle Java Documentation](https://docs.oracle.com/en/java/)
-- [Java Tutorials](https://docs.oracle.com/javase/tutorial/)
-- [GeeksforGeeks Java](https://www.geeksforgeeks.org/java/)
-
----
-
-## 🎉 ចុងក្រោយ
-
-> [!TIP]
-> ការអនុវត្តការសរសេរកូដជារៀងរាល់ថ្ងៃ! ព្យាយាមបង្កើតគម្រោងតូចដើម្បីក្សាន់ការយល់ដឹងរបស់អ្នក។
-
----
-
-ឡើងលើក្នុងលម្អិត ហើយរីករាយក្នុងការសរសេរកម្មវិធី! ☕💻
+<p align="center">
+  Made with ❤️ for developers learning Java.
+</p>
